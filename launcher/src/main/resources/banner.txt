@@ -1,0 +1,14 @@
+${AnsiColor.BRIGHT_BLUE}
+   _____    _______ ____   ____.___ .____          ____.
+  /  _  \   \      \\   \ /   /|   ||    |        |    |
+ /  /_\  \  /   |   \\   Y   / |   ||    |        |    |
+/    |    \/    |    \\     /  |   ||    |___ /\__|    |
+\____|__  /\____|__  / \___/   |___||_______ \\________|
+        \/         \/                       \/
+
+
+${AnsiColor.BRIGHT_GREEN}
+AnvilJ Version: 1.0.0
+Jeecg  Boot Version: 3.6.0
+Spring Boot Version: ${spring-boot.version}${spring-boot.formatted-version}
+${AnsiColor.BLACK}
