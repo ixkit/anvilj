@@ -82,6 +82,7 @@
         <module>launcher</module>
         <module>member</module>
 
+        <module>../anvilj-addons</module>
     </modules>
     <dependencies>
         <!-- use -->

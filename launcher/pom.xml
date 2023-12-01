@@ -35,7 +35,19 @@
             <version>${mrember.version}</version>
             <scope>compile</scope>
         </dependency>
-
+        <!-- external addons -->
+        <dependency>
+            <groupId>org.ixkit.anvilj</groupId>
+            <artifactId>anvilj-addons-equipment</artifactId>
+            <version>${ixkit-anvilj.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.ixkit.anvilj</groupId>
+            <artifactId>anvilj-addons-twin</artifactId>
+            <version>${ixkit-anvilj.version}</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
 <!--    <build>-->
