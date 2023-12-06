@@ -1,6 +1,7 @@
 package org.ixkit.anvilj.runtime;
 
 
+
 import org.ixkit.things.equipment.controller.EquipmentController;
 import org.ixkit.things.twinscenario.controller.TwinScenarioController;
 
@@ -12,5 +13,6 @@ public class Loader {
 
     public Loader(EquipmentController controller) {
         this.controller = controller;
+
     }
 }
