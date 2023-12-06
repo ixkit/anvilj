@@ -81,7 +81,7 @@
     </properties>
     <modules>
         <module>../jeecg-boot</module>
-		<module>ixkit-parent</module>
+		<module>ixkit-land-parent</module>
         <module>core</module>
 		<module>land</module>
         <module>launcher</module>

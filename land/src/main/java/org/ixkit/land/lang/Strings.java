@@ -15,12 +15,15 @@
  */
 package org.ixkit.land.lang;
 
+import com.google.common.hash.Hashing;
 import org.apache.commons.lang3.StringUtils;
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import javax.annotation.CheckForNull;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 /**
  * Project: tagsql
@@ -238,4 +241,76 @@ public class Strings {
         return result;
     }
 
+
+
+    private static final Pattern[] inputRegexes = new Pattern[4];
+
+    static {
+        inputRegexes[0] = Pattern.compile(".*[A-Z].*");
+        inputRegexes[1] = Pattern.compile(".*[a-z].*");
+        inputRegexes[2] = Pattern.compile(".*\\d.*");
+        inputRegexes[3] = Pattern.compile(".*[`~!@#$%^&*()\\-_=+\\\\|\\[{\\]};:'\",<.>/?].*");
+    }
+
+    public static boolean isUppercase(String input){
+        if (inputRegexes[0].matcher(input).matches()) {
+            return true;
+        }
+        return false;
+    }
+
+
+    public static String sha256(String originalString){
+        String sha256hex = Hashing.sha256()
+                .hashString(originalString, StandardCharsets.UTF_8)
+                .toString();
+        return sha256hex;
+    }
+
+
+    public static String getGuid(){
+        final String uuid = (UUID.randomUUID()).toString();
+        return uuid;
+    }
+
+    public static String __(String value){
+        return nullToBlank(value);
+    }
+    public static String nullToBlank(String value){
+        if (null == value){
+            return "";
+        }
+        return value;
+    }
+    public static boolean isEmpty(@CheckForNull String string) {
+        return   com.google.common.base.Strings.isNullOrEmpty(string);
+    }
+
+    public static String ifEmptyThen(String value,String nullThen){
+        if (Strings.isEmpty(value)){
+            return nullThen;
+        }
+        return value;
+    }
+
+    public static boolean equals(String a,String b){
+        if (a == null && b == null){
+            return true;
+        }
+        if (a == null ||  b == null){
+            return false;
+        }
+        return a.equals(b) ;
+    }
+    public static boolean sameTo(String a,String b){
+        a = __(a);
+        b = __(b);
+        return a.equals(b);
+    }
+    public static String map2UrlQueryString(Map<String, String> map){
+        String queryString = map.entrySet().stream()
+                .map(entry -> entry.getKey() + "=" + entry.getValue())
+                .collect(Collectors.joining("&"));
+        return queryString;
+    }
 }

@@ -24,7 +24,7 @@
             <artifactId>javax.persistence-api</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.ixkit</groupId>
+            <groupId>org.ixkit.land</groupId>
             <artifactId>ixkit-land</artifactId>
             <version>1.0.0</version>
             <scope>compile</scope>

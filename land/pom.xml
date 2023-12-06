@@ -3,26 +3,23 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>ixkit-parent</artifactId>
-        <groupId>org.ixkit</groupId>
+        <groupId>org.ixkit.land</groupId>
+        <artifactId>ixkit-land-parent</artifactId>
         <version>1.0.0</version>
-        <relativePath>../ixkit-parent/pom.xml</relativePath>
+        <relativePath>../ixkit-land-parent/pom.xml</relativePath>
     </parent>
-<!--    <parent>-->
-<!--        <groupId>org.ixkit.anvilj</groupId>-->
-<!--        <artifactId>ixkit-parent</artifactId>-->
-<!--        <version>1.0.0</version>-->
-<!--        <relativePath>../pom.xml</relativePath>-->
-<!--    </parent>-->
-
-
     <modelVersion>4.0.0</modelVersion>
+    <artifactId>ixkit-land</artifactId>
     <version>1.0.0</version>
+    <description>Land on Java</description>
+
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
-    <artifactId>ixkit-land</artifactId>
 
+    <dependencies>
+
+    </dependencies>
 
 </project>
