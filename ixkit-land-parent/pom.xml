@@ -3,12 +3,12 @@
 		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.ixkit</groupId>
-	<artifactId>ixkit-parent</artifactId>
+	<groupId>org.ixkit.land</groupId>
+	<artifactId>ixkit-land-parent</artifactId>
 	<version>1.0.0</version>
 	<packaging>pom</packaging>
 	<url>https://github.com/ixkit</url>
-	<description> i⚒kit </description>
+	<description>Land on Java</description>
 	<licenses>
 		<license>
 			<name>Apache License, Version 2.0</name>
@@ -28,6 +28,11 @@
 		<java.version>11</java.version>
 		<javadocExecutable>${java.home}/../bin/javadoc</javadocExecutable>
 		<mavcn.javadoc.skip>true</mavcn.javadoc.skip>
+
+		<hutool.version>5.3.8</hutool.version>
+		<orgjson.version>20200518</orgjson.version>
+		<jsonpath.version>2.7.0</jsonpath.version>
+
 	</properties>
 
 	<dependencies>
@@ -62,12 +67,23 @@
 			<artifactId>gson</artifactId>
 			<version>2.8.5</version>
 		</dependency>
-<!--		<dependency>-->
-<!--			<groupId>com.github.jsqlparser</groupId>-->
-<!--			<artifactId>jsqlparser</artifactId>-->
-<!--			<version>3.2</version>-->
-<!--		</dependency>-->
+		<!-- json -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>${orgjson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.jayway.jsonpath</groupId>
+			<artifactId>json-path</artifactId>
+			<version>${jsonpath.version}</version>
+		</dependency>
 
+		<dependency>
+			<groupId>cn.hutool</groupId>
+			<artifactId>hutool-all</artifactId>
+			<version>${hutool.version}</version>
+		</dependency>
 
 	</dependencies>
 

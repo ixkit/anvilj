@@ -15,7 +15,10 @@
  */
 package org.ixkit.land.utils;
 
+import com.google.common.hash.Hashing;
 import org.apache.commons.lang3.StringUtils;
+
+import java.nio.charset.StandardCharsets;
 
 /**
  * @class:StringUtil
@@ -28,5 +31,59 @@ public class StringUtil {
 
     public static boolean isEmpty(String value){
         return StringUtils.isEmpty(value);
+    }
+
+
+    public static String bytes2Str(byte[] bytes){
+        return new String(bytes, StandardCharsets.UTF_8);
+    }
+
+    public static String sha256(String value){
+        String sha256hex = Hashing.sha256()
+                .hashString(value, StandardCharsets.UTF_8)
+                .toString();
+        return sha256hex;
+    }
+    public static boolean equals(final String cs1, final String cs2) {
+        //同一对象返回true
+        if (cs1 == cs2) {
+            return true;
+        }
+        //一个或两个都为null返回false
+        if (cs1 == null || cs2 == null) {
+            return false;
+        }
+        //两个字符串的长度不一样返回false
+        if (cs1.length() != cs2.length()) {
+            return false;
+        }
+        //两个都是String实例，则通过equals方法比较，本质是使用==比较两个对象
+        //   if (cs1 instanceof String && cs2 instanceof String) {
+        return cs1.equals(cs2);
+        //   }
+        // return false;
+    }
+
+    public static boolean isEmpty(Object object) {
+        if (object == null) {
+            return (true);
+        }
+        if ("".equals(object)) {
+            return (true);
+        }
+        if ("null".equals(object)) {
+            return (true);
+        }
+        return (false);
+    }
+
+    public static String getString(String s) {
+        return getString(s,"");
+    }
+    public static String getString(String s, String defval) {
+        if (isEmpty(s)) {
+            return (defval);
+        }
+        return (s.trim());
     }
 }
