@@ -14,5 +14,5 @@ os_del.cmd
 env/
 ../logs
 
-*/.DS_Store
-*.DS_Store
+**/.DS_Store
+.DS_Store

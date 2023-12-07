@@ -26,7 +26,7 @@
         <dependency>
             <groupId>org.ixkit.land</groupId>
             <artifactId>ixkit-land</artifactId>
-            <version>1.0.0</version>
+            <version>${ixkit-land.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>

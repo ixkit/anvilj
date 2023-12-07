@@ -14,20 +14,16 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.ixkit.anvil</groupId>
-            <artifactId>anvil-land</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <groupId>org.ixkit.land</groupId>
+            <artifactId>ixkit-land</artifactId>
+            <version>${ixkit-land.version}</version>
+            <scope>compile</scope>
         </dependency>
 <!--        <dependency>-->
 <!--            <groupId>org.ixkit.vertxbot</groupId>-->
 <!--            <artifactId>vertxbot-core</artifactId>-->
 <!--        </dependency>-->
-        <dependency>
-            <groupId>org.ixkit.land</groupId>
-            <artifactId>ixkit-land</artifactId>
-            <version>1.0.0</version>
-            <scope>compile</scope>
-        </dependency>
+
         <!-- apps - member -->
         <dependency>
             <groupId>org.ixkit.anvilj</groupId>
