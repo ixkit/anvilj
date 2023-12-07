@@ -17,7 +17,7 @@
 
     <properties>
         <ixkit-anvilj.version>1.0.0-SNAPSHOT</ixkit-anvilj.version>
-        <ixkit-anvil.version>1.0.0-SNAPSHOT</ixkit-anvil.version>
+        <ixkit-land.version>1.0.0-SNAPSHOT</ixkit-land.version>
         <vertxbot.version>1.0.0-SNAPSHOT</vertxbot.version>
         <!-- define compile options -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -76,9 +76,9 @@
     </properties>
     <modules>
         <module>../jeecg-boot</module>
-		<module>ixkit-land-parent</module>
+		<module>ixkit-land</module>
         <module>core</module>
-		<module>land</module>
+
         <module>launcher</module>
         <module>member</module>
 
@@ -156,7 +156,14 @@
 
     <dependencyManagement>
         <dependencies>
-
+            <!-- land -->
+            <dependency>
+                <groupId>org.ixkit.land</groupId>
+                <artifactId>ixkit-land-parent</artifactId>
+                <version>${ixkit-land.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <!-- spring-cloud-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>

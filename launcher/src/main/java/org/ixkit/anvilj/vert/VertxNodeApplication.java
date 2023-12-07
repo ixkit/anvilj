@@ -18,8 +18,8 @@ package org.ixkit.anvilj.vert;
 
 import lombok.extern.slf4j.Slf4j;
 
-import org.ixkit.anvil.lang.Strings;
-import org.ixkit.anvil.util.StringUtil;
+import org.ixkit.land.lang.Strings;
+import org.ixkit.land.utils.StringUtil;
 //import org.ixkit.framework.runtime.Env;
 //import org.ixkit.vertxbot.VertxBot;
 //import org.ixkit.vertxbot.config.VertxNodeConfig;
