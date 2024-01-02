@@ -93,7 +93,7 @@ spring:
     pathmatch:
       matching-strategy: ant_path_matcher
   resource:
-    static-locations: classpath:/static/,classpath:/public/
+    static-locations: file:./dist/,classpath:/static/,classpath:/public/
     #static-locations: file:./static/,file:./dist/
   autoconfigure:
     exclude: com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure
@@ -192,7 +192,7 @@ jeecg:
     #webapp文件路径
     webapp: /opt/webapp
   shiro:
-    excludeUrls: /test/jeecgDemo/demo3,/test/jeecgDemo/redisDemo/**,/jmreport/bigscreen2/**
+    excludeUrls: /studio/**,/test/jeecgDemo/demo3,/test/jeecgDemo/redisDemo/**,/jmreport/bigscreen2/**
   #阿里云oss存储和大鱼短信秘钥配置
   oss:
     accessKey: ??

@@ -36,7 +36,7 @@
         <hutool.version>5.3.8</hutool.version>
         <orgjson.version>20200518</orgjson.version>
         <jsonpath.version>2.7.0</jsonpath.version>
-
+        <fasterxml.uuid.version>4.1.0</fasterxml.uuid.version>
     </properties>
 
     <modules>
@@ -46,6 +46,11 @@
     </modules>
 
     <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.uuid</groupId>
+            <artifactId>java-uuid-generator</artifactId>
+            <version>${fasterxml.uuid.version}</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
         <dependency>
             <groupId>commons-io</groupId>
@@ -99,6 +104,7 @@
 
     <dependencyManagement>
         <dependencies>
+
             <dependency>
                 <groupId>org.ixkit.land</groupId>
                 <artifactId>ixkit-land</artifactId>

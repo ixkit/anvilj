@@ -61,17 +61,7 @@ public class ThreadMaster {
         executorService.schedule(command,   delayInSeconds, TimeUnit.SECONDS);
         return executorService;
     }
-    public static void  submitThen(Consumer consumer, Object arg){
-    ForkJoinPool.commonPool().submit(() -> {
 
-        try {
-            consumer.accept(arg);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    });
-    }
     public static void traceThread(){
        List list = Thread.getAllStackTraces()
                 .keySet()
@@ -81,4 +71,32 @@ public class ThreadMaster {
         System.out.print(list.toArray());
         System.out.println(list );
     }
+
+    private static ForkJoinPool forkJoinPoolInstance = null;
+    private static int defaultParallelism = 3;
+    public static ForkJoinPool getForkPool() {
+        if (forkJoinPoolInstance == null) {
+            synchronized (ThreadMaster.class) {
+                if (forkJoinPoolInstance == null) {
+                    forkJoinPoolInstance = new ForkJoinPool(defaultParallelism);
+                }
+            }
+        }
+        return forkJoinPoolInstance;
+    }
+
+    public static <T> void  submit(Consumer<T> consumer, T t){
+
+        getForkPool().submit(() -> {
+
+            try {
+                consumer.accept(t);
+            } catch (Exception e) {
+                e.printStackTrace();
+                throw e;
+            }
+
+        });
+    }
+
 }

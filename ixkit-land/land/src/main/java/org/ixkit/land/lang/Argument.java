@@ -59,6 +59,7 @@ public   class Argument<K,V> extends HashMap  {
         if (null == v){
             return null;
         }
+        if (v instanceof Boolean) return  String.valueOf(v);
         if (v instanceof String) return  (String)v;
         if (v instanceof Long)  return Long.toString((Long)v);
         if (v instanceof Integer) return Integer.toString((Integer)v);
@@ -77,5 +78,18 @@ public   class Argument<K,V> extends HashMap  {
 
         String buf = ""+ v;
         return Long.parseLong(buf);
+    }
+
+    public Boolean getAsBoolean(Object key){
+        Object v = this.get(key);
+        if (null == v){
+            return null;
+        }
+        try {
+            return Boolean.parseBoolean(_getAsString(key));
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return false;
     }
 }
