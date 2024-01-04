@@ -26,6 +26,7 @@ import java.net.UnknownHostException;
 @ComponentScan(basePackages = {
         "org.ixkit"
         ,"org.jeecg"
+        ,"org.jeecg.modules.demo.test.controller"
 })
 @EnableAutoConfiguration(exclude={MongoAutoConfiguration.class})
 public class LauncherApplication extends SpringBootServletInitializer {

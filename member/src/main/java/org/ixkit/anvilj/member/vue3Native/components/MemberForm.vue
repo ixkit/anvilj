@@ -3,13 +3,33 @@
     <a-form ref="formRef" class="antd-modal-form" :labelCol="labelCol" :wrapperCol="wrapperCol">
       <a-row>
         <a-col :span="24">
-          <a-form-item label="name" v-bind="validateInfos.name">
-            <a-input v-model:value="formData.name" placeholder="请输入name" :disabled="disabled"></a-input>
+          <a-form-item label="名称" v-bind="validateInfos.name">
+            <a-input v-model:value="formData.name" placeholder="请输入名称" :disabled="disabled"></a-input>
           </a-form-item>
         </a-col>
         <a-col :span="24">
-          <a-form-item label="email" v-bind="validateInfos.email">
-            <a-input v-model:value="formData.email" placeholder="请输入email" :disabled="disabled"></a-input>
+          <a-form-item label="备注" v-bind="validateInfos.remark">
+            <a-input v-model:value="formData.remark" placeholder="请输入备注" :disabled="disabled"></a-input>
+          </a-form-item>
+        </a-col>
+        <a-col :span="24">
+          <a-form-item label="状态" v-bind="validateInfos.status">
+            <a-input v-model:value="formData.status" placeholder="请输入状态" :disabled="disabled"></a-input>
+          </a-form-item>
+        </a-col>
+        <a-col :span="24">
+          <a-form-item label="扩展数据" v-bind="validateInfos.extraData">
+            <a-input v-model:value="formData.extraData" placeholder="请输入扩展数据" :disabled="disabled"></a-input>
+          </a-form-item>
+        </a-col>
+        <a-col :span="24">
+          <a-form-item label="租户id" v-bind="validateInfos.tenantId">
+	          <a-input-number v-model:value="formData.tenantId" placeholder="请输入租户id" style="width: 100%" :disabled="disabled"/>
+          </a-form-item>
+        </a-col>
+        <a-col :span="24">
+          <a-form-item label="乐观锁" v-bind="validateInfos.rawVer">
+	          <a-input-number v-model:value="formData.rawVer" placeholder="请输入乐观锁" style="width: 100%" :disabled="disabled"/>
           </a-form-item>
         </a-col>
       </a-row>
@@ -18,16 +38,17 @@
 </template>
 
 <script lang="ts" setup>
-  import { ref, reactive, defineExpose, nextTick, defineProps, computed } from 'vue';
+  import { ref, reactive, defineExpose, nextTick, defineProps, computed, onMounted } from 'vue';
   import { defHttp } from '/@/utils/http/axios';
   import { useMessage } from '/@/hooks/web/useMessage';
-  import moment from 'moment';
   import { getValueType } from '/@/utils';
-  import { saveOrUpdate } from '../AnvilMember.api';
+  import { saveOrUpdate } from '../Member.api';
   import { Form } from 'ant-design-vue';
   
   const props = defineProps({
-    disabled: { type: Boolean, default: false },
+    formDisabled: { type: Boolean, default: false },
+    formData: { type: Object, default: ()=>{} },
+    formBpm: { type: Boolean, default: true }
   });
   const formRef = ref();
   const useForm = Form.useForm;
@@ -35,8 +56,11 @@
   const formData = reactive<Record<string, any>>({
     id: '',
     name: '',   
-    id: '',
-    email: '',   
+    remark: '',   
+    status: '',   
+    extraData: '',   
+    tenantId: undefined,
+    rawVer: undefined,
   });
   const { createMessage } = useMessage();
   const labelCol = ref<any>({ xs: { span: 24 }, sm: { span: 5 } });
@@ -46,6 +70,19 @@
   const validatorRules = {
   };
   const { resetFields, validate, validateInfos } = useForm(formData, validatorRules, { immediate: true });
+
+  // 表单禁用
+  const disabled = computed(()=>{
+    if(props.formBpm === true){
+      if(props.formData.disabled === false){
+        return false;
+      }else{
+        return true;
+      }
+    }
+    return props.formDisabled;
+  });
+
   
   /**
    * 新增
@@ -113,7 +150,7 @@
 
 <style lang="less" scoped>
   .antd-modal-form {
-    height: 500px !important;
+    min-height: 500px !important;
     overflow-y: auto;
     padding: 24px 24px 24px 24px;
   }

@@ -1,44 +1,50 @@
-import {defHttp} from '/@/utils/http/axios';
+import { defHttp } from '/@/utils/http/axios';
 import { useMessage } from "/@/hooks/web/useMessage";
 
 const { createConfirm } = useMessage();
 
 enum Api {
-  list = '/org.ixkit.anvil.member/anvilMember/list',
-  save='/org.ixkit.anvil.member/anvilMember/add',
-  edit='/org.ixkit.anvil.member/anvilMember/edit',
-  deleteOne = '/org.ixkit.anvil.member/anvilMember/delete',
-  deleteBatch = '/org.ixkit.anvil.member/anvilMember/deleteBatch',
-  importExcel = '/org.ixkit.anvil.member/anvilMember/importExcel',
-  exportXls = '/org.ixkit.anvil.member/anvilMember/exportXls',
+  list = '/api/v1/anvilj/member/list',
+  save='/api/v1/anvilj/member/add',
+  edit='/api/v1/anvilj/member/edit',
+  deleteOne = '/api/v1/anvilj/member/delete',
+  deleteBatch = '/api/v1/anvilj/member/deleteBatch',
+  importExcel = '/api/v1/anvilj/member/importExcel',
+  exportXls = '/api/v1/anvilj/member/exportXls',
 }
+
 /**
  * 导出api
  * @param params
  */
 export const getExportUrl = Api.exportXls;
+
 /**
  * 导入api
  */
 export const getImportUrl = Api.importExcel;
+
 /**
  * 列表接口
  * @param params
  */
-export const list = (params) =>
-  defHttp.get({url: Api.list, params});
+export const list = (params) => defHttp.get({ url: Api.list, params });
 
 /**
  * 删除单个
+ * @param params
+ * @param handleSuccess
  */
 export const deleteOne = (params,handleSuccess) => {
   return defHttp.delete({url: Api.deleteOne, params}, {joinParamsToUrl: true}).then(() => {
     handleSuccess();
   });
 }
+
 /**
  * 批量删除
  * @param params
+ * @param handleSuccess
  */
 export const batchDelete = (params, handleSuccess) => {
   createConfirm({
@@ -54,11 +60,13 @@ export const batchDelete = (params, handleSuccess) => {
     }
   });
 }
+
 /**
  * 保存或者更新
  * @param params
+ * @param isUpdate
  */
 export const saveOrUpdate = (params, isUpdate) => {
   let url = isUpdate ? Api.edit : Api.save;
-  return defHttp.post({url: url, params});
+  return defHttp.post({ url: url, params }, { isTransformResponse: false });
 }
