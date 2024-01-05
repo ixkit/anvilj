@@ -24,7 +24,7 @@
         <maven.compiler.target>11</maven.compiler.target>
         <maven.compiler.source>11</maven.compiler.source>
         <!-- original -->
-        <jeecgboot.version>3.6.0</jeecgboot.version>
+        <jeecgboot.version>3.6.2</jeecgboot.version>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
@@ -52,7 +52,7 @@
         <minidao.version>1.9.5</minidao.version>
 
         <!-- 积木报表-->
-        <jimureport-spring-boot-starter.version>1.6.4</jimureport-spring-boot-starter.version>
+        <jimureport-spring-boot-starter.version>1.6.6</jimureport-spring-boot-starter.version>
         <commons.version>2.6</commons.version>
         <aliyun-java-sdk-dysmsapi.version>2.1.0</aliyun-java-sdk-dysmsapi.version>
         <aliyun.oss.version>3.11.2</aliyun.oss.version>
@@ -75,7 +75,9 @@
 
     </properties>
     <modules>
+        <!-- clone the matched version to relative path-->
         <module>../jeecg-boot</module>
+
 		<module>ixkit-land</module>
         <module>core</module>
 

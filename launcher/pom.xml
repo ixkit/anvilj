@@ -34,7 +34,7 @@
         <dependency>
             <groupId>org.jeecgframework.boot</groupId>
             <artifactId>jeecg-module-demo</artifactId>
-            <version>3.6.0</version>
+            <version>3.6.2</version>
             <scope>compile</scope>
         </dependency>
 

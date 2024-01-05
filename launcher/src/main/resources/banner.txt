@@ -9,6 +9,6 @@ ${AnsiColor.BRIGHT_BLUE}
 
 ${AnsiColor.BRIGHT_GREEN}
 AnvilJ Version: 1.0.0
-Jeecg  Boot Version: 3.6.0
+Jeecg  Boot Version: 3.6.2
 Spring Boot Version: ${spring-boot.version}${spring-boot.formatted-version}
 ${AnsiColor.BLACK}
