@@ -3,3 +3,10 @@ spring:
     name: anvilj
   profiles:
     active: dev #'@profile.name@'
+
+register:
+  partner:
+    roles: partner # role code list with comma, eg: partner,admin
+  emailSign:
+    durationSeconds:  1800 # 60 * 10
+    endPoint: http://localhost:8181/anvilj

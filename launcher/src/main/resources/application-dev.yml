@@ -7,7 +7,7 @@ server:
     include-stacktrace: ALWAYS
     include-message: ALWAYS
   servlet:
-    context-path: /anvilj
+    context-path: / #/anvilj
   compression:
     enabled: true
     min-response-size: 1024
@@ -25,9 +25,9 @@ spring:
       max-file-size: 10MB
       max-request-size: 10MB
   mail:
-    host: smtp.163.com
-    username: jeecgos@163.com
-    password: ??
+    host: smtp.qq.com
+    username: 157054198@qq.com
+    password: evnamrhvpkcybhdb
     properties:
       mail:
         smtp:
@@ -192,7 +192,7 @@ jeecg:
     #webapp文件路径
     webapp: /opt/webapp
   shiro:
-    excludeUrls: /test/jeecgDemo/demo3,/test/jeecgDemo/redisDemo/**,/jmreport/bigscreen2/**
+    excludeUrls: /api/v1/partner/account/**,/test/jeecgDemo/demo3,/test/jeecgDemo/redisDemo/**,/jmreport/bigscreen2/**
   #阿里云oss存储和大鱼短信秘钥配置
   oss:
     accessKey: ??

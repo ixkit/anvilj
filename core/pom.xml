@@ -12,4 +12,10 @@
     <artifactId>ixkit-anvilj-core</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.ixkit.land</groupId>
+            <artifactId>ixkit-land</artifactId>
+        </dependency>
+    </dependencies>
 </project>

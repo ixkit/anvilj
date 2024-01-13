@@ -82,7 +82,7 @@
         <module>core</module>
 
         <module>launcher</module>
-        <module>member</module>
+        <module>partner</module>
 
     </modules>
     <dependencies>
@@ -103,7 +103,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-
 
         <!-- json -->
         <dependency>

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -8,33 +9,30 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>ixkit-anvilj-launcher</artifactId>
-    <properties>
-        <mrember.version>1.0.0-SNAPSHOT</mrember.version>
-    </properties>
+    <packaging>jar</packaging>
+    <artifactId>ixkit-anvilj-partner</artifactId>
     <dependencies>
+
+<!--        <dependency>-->
+<!--            <groupId>org.ixkit.anvilj</groupId>-->
+<!--            <artifactId>ixkit-land</artifactId>-->
+<!--            <version>1.0.0</version>-->
+<!--            <scope>compile</scope>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>javax.persistence-api</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.ixkit.land</groupId>
             <artifactId>ixkit-land</artifactId>
             <version>${ixkit-land.version}</version>
             <scope>compile</scope>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.ixkit.vertxbot</groupId>-->
-<!--            <artifactId>vertxbot-core</artifactId>-->
-<!--        </dependency>-->
-
-        <!-- apps - partner -->
         <dependency>
             <groupId>org.ixkit.anvilj</groupId>
-            <artifactId>ixkit-anvilj-partner</artifactId>
-            <version>${mrember.version}</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jeecgframework.boot</groupId>
-            <artifactId>jeecg-module-demo</artifactId>
-            <version>3.6.2</version>
+            <artifactId>ixkit-anvilj-core</artifactId>
+            <version>${ixkit-anvilj.version}</version>
             <scope>compile</scope>
         </dependency>
 
@@ -51,17 +49,6 @@
 <!--                </configuration>-->
 <!--            </plugin>-->
 <!--        </plugins>-->
-<!--        <resources>-->
-<!--            <resource>-->
-<!--                <directory>src/main/resources</directory>-->
-<!--                <filtering>true</filtering>-->
-<!--            </resource>-->
-<!--            <resource>-->
-<!--                <directory>src/main/java</directory>-->
-<!--                <includes>-->
-<!--                    <include>**/*.xml</include>-->
-<!--                </includes>-->
-<!--            </resource>-->
-<!--        </resources>-->
+
 <!--    </build>-->
 </project>
