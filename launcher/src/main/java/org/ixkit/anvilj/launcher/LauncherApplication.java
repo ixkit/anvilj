@@ -24,7 +24,8 @@ import java.net.UnknownHostException;
 @Slf4j
 @SpringBootApplication
 @ComponentScan(basePackages = {
-        "org.ixkit"
+        "org.ixkit",
+        "org.ixkit.anvilj.website"
         ,"org.jeecg"
         ,"org.jeecg.modules.demo.test.controller"
 })

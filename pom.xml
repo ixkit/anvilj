@@ -83,7 +83,7 @@
 
         <module>launcher</module>
         <module>partner</module>
-
+        <module>website</module>
     </modules>
     <dependencies>
         <!-- use -->
