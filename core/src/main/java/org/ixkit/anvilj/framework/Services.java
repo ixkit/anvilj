@@ -1,6 +1,6 @@
 package org.ixkit.anvilj.framework;
 
-import org.ixkit.anvilj.framework.runtime.Env;
+import org.ixkit.anvilj.framework.runtime.AppEnv;
 
 /**
  * @class:Services
@@ -12,7 +12,7 @@ import org.ixkit.anvilj.framework.runtime.Env;
 public class Services {
 
     public static  <T> T seek(Class<T> t){
-       return Env.current.getBean(t);
+       return AppEnv.current.getBean(t);
     }
 
 

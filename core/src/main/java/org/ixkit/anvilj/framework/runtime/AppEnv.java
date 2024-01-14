@@ -9,13 +9,13 @@ import java.util.Arrays;
 
 
 /**
- * @class:Env
+ * @class:AppEnv
  * @author: RobinZ iRobinZhang@hotmail.com
  * @date: 16/12/2021
  * @version:0.1.0
  * @purpose:
  */
-public enum Env {
+public enum AppEnv {
         current;
 
 //    @Autowired

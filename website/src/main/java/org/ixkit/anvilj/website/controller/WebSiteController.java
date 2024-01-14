@@ -20,15 +20,14 @@ import java.util.Map;
 public class WebSiteController {
 
     /*
-        website/view?page=site.policy => resources/public/site/policy/index.html
+        website/view/?page=site/policy/index.html => resources/public/site/policy/index.html
      */
     @ApiOperation(value="view", notes="view")
-    @RequestMapping(value = "/view",method = RequestMethod.GET)
+    @RequestMapping(value = "/view",method = {RequestMethod.GET,RequestMethod.POST})
     public ModelAndView webViewPage(ModelAndView modelAndView, HttpServletRequest request, HttpServletResponse response) {
         Map params = Input.asParameters(request);
-        log.debug("params:{}",params);
+        log.debug("webViewPage, params:{}",params);
         String page = (String)  params.get("page");
-      //  page = page.replace(".", "/");
         modelAndView.addAllObjects(params);
         modelAndView.setViewName(page);
         return modelAndView;
