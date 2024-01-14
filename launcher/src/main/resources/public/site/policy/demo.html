@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>AnvilJ Policy ✍️ </title>
+</head>
+<body>
+
+<!-- http://localhost:8181/anvilj/website/view/?@page=site/policy/demo&@trace=1 -->
+<h1>AnvilJ Policy ✍️ </h1>
+<br><br>
+@context:
+<div id="renderRef" >
+
+</div>
+<div id="contextRef" style="display:none">{{@context}}</div>
+</body>
+<script>
+   function renderContext(){
+        try{
+            var text = document.getElementById('contextRef').innerText;
+            var result = JSON.stringify(JSON.parse(text), null, 2);
+            document.getElementById('renderRef').innerText= result ;
+        }catch(ex){
+            console.waring('some errors occurs',ex);
+        }
+   }
+   renderContext();
+</script>
+<style>
+    #renderRef{
+        width:100%;height:100%;
+        background:black;color:yellow
+    }
+</style>
+</html>

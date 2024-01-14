@@ -3,6 +3,13 @@ spring:
     name: anvilj
   profiles:
     active: dev #'@profile.name@'
+  mustache:
+    enabled: true
+    prefix: classpath:/public/
+    #prefix: classpath:/templates/
+    suffix: .html
+  servlet:
+      expose-request-attributes: true
 
 register:
   partner:
