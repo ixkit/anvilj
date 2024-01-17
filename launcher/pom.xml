@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>ixkit-anvilj-launcher</artifactId>
     <properties>
-        <mrember.version>1.0.0-SNAPSHOT</mrember.version>
+
     </properties>
     <dependencies>
         <dependency>
@@ -28,7 +28,7 @@
         <dependency>
             <groupId>org.ixkit.anvilj</groupId>
             <artifactId>ixkit-anvilj-partner</artifactId>
-            <version>${mrember.version}</version>
+            <version>${ixkit-anvilj.version}</version>
             <scope>compile</scope>
         </dependency>
         <!-- apps - website -->
@@ -41,7 +41,7 @@
         <dependency>
             <groupId>org.jeecgframework.boot</groupId>
             <artifactId>jeecg-module-demo</artifactId>
-            <version>3.6.2</version>
+            <version>${jeecgboot.version}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>

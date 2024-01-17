@@ -84,6 +84,7 @@
         <module>launcher</module>
         <module>partner</module>
         <module>website</module>
+
     </modules>
     <dependencies>
         <!-- another template engine -->
@@ -419,6 +420,4 @@
             </resource>
         </resources>
     </build>
-
-
 </project>
