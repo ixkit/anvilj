@@ -4,7 +4,7 @@
  Build Trustable Application by Java
 
 ### Features
--  Tow Modules: WebSite and AdminConsole
+-  Tow Modules: WebSite and AdminConsole  
    User roles: website user and enterprise inner user
 
 -  WebSite user register via Email
