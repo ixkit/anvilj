@@ -63,4 +63,7 @@ public class Account extends XObject implements Serializable,IAccount {
 
     @ApiModelProperty(value = "roles: role ids with comma string")
     private String roleIds;
+
+    @ApiModelProperty(value = "orgIds")
+    private String orgIds;
 }

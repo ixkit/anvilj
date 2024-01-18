@@ -17,9 +17,11 @@ public class SignData extends XObject {
     @NotBlank(message = "ts不能为空")
     private String ts;
 
+    // identify the redirect link while sign operation done
+    private String redirectLink;
 
     public static Argument toArgs(SignData signData){
         //TODO blank character ?
-        return Argument.of("uid", signData.getUid(),"token",signData.getToken(), "ts",signData.getTs());
+        return Argument.of("uid", signData.getUid(),"token",signData.getToken(), "ts",signData.getTs(),"redirectLink", signData.getRedirectLink());
     }
 }

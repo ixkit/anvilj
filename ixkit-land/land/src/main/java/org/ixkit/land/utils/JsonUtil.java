@@ -68,6 +68,40 @@ public class JsonUtil {
 
         return new JSONObject(buf);
     }
+    private static Object fetchValue(JsonPrimitive jsonPrimitive){
+        if (null == jsonPrimitive) return null;
+        if (jsonPrimitive.isJsonNull()){
+            return null;
+        }
+
+        if (jsonPrimitive.isBoolean()){
+            return jsonPrimitive.getAsBoolean();
+        }
+        if (jsonPrimitive.isString()){
+            return jsonPrimitive.getAsString();
+        }
+        if (jsonPrimitive.isNumber()){
+            return jsonPrimitive.getAsNumber();
+        }
+        if (jsonPrimitive.isJsonObject()){
+            //@@TODO
+        }
+        return jsonPrimitive;
+    }
+
+    public static Map fromJsonObjectToPureMap(JsonObject jsonObject){
+        Map fromMap = getGson().fromJson(jsonObject, Map.class);
+        Map result = new HashMap();
+        fromMap.keySet().forEach((x)->{
+          Object value = fromMap.get(x);
+          JsonPrimitive jsonPrimitive = (JsonPrimitive)value;
+            Object readValue = fetchValue(jsonPrimitive);
+            if (null != readValue) {
+                result.put(x, readValue);
+            }
+        });
+        return result;
+    }
     @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         String flink = "{ fa: 1024, fb: 1024.0 }";

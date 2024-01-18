@@ -6,7 +6,7 @@ import java.security.MessageDigest;
  * @Description: 加密工具
  *
  * update: 【类名改了大小写】 date: 2022-04-18
- * @author: jeecg-boot
+ * @Author: ixkit
  */
 public class Md5Util {
 

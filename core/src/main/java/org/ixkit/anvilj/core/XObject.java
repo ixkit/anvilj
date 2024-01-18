@@ -3,22 +3,30 @@ package org.ixkit.anvilj.core;
 import org.ixkit.land.lang.Argument;
 
 import javax.persistence.Transient;
+import java.util.Map;
 
 public abstract  class XObject {
     @Transient
-    private Argument _bucket ;
+    private Argument bucket ;
     public Object get(Object key){
-        if (_bucket == null){
+        if (bucket == null){
             return null;
         }
-        return _bucket.get(key);
+        return bucket.get(key);
     }
 
     public XObject put(Object key, Object value){
-        if (null == _bucket){
-            _bucket = Argument.of();
+        if (null == bucket){
+            bucket = Argument.of();
         }
-        _bucket.put(key,value);
+        bucket.put(key,value);
+        return this;
+    }
+    public XObject putAll(Map map){
+        if (null == bucket){
+            bucket = Argument.of();
+        }
+        bucket.putAll(map);
         return this;
     }
 }

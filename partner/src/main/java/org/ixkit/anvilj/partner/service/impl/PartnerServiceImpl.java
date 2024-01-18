@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * @Description: 基础资源 成员表
- * @Author: jeecg-boot
+ * @Author: ixkit
  * @Date: 2024-01-02
  * @Version: V1.0
  */
@@ -38,6 +38,7 @@ public class PartnerServiceImpl extends ServiceImpl<PartnerMapper, Partner> impl
         SysUser sysUser = new SysUser();
         X.with(sysUser, (x) -> {
             x.setUsername(partner.getName());
+            x.setRealname(partner.getName());
             x.setPhone(partner.getPhone());
             x.setEmail(partner.getEmail());
             x.setPassword(partner.getAccount().getPassword());
@@ -46,8 +47,8 @@ public class PartnerServiceImpl extends ServiceImpl<PartnerMapper, Partner> impl
             x.setDelFlag(0);
         });
         String defaultRoleIds = partner.getAccount().getRoleIds();
-
-        sysUserService.saveUser(sysUser, defaultRoleIds, null, null);
+        String orgIds = partner.getAccount().getOrgIds();
+        sysUserService.saveUser(sysUser, defaultRoleIds, orgIds, null);
 
         return sysUser;
     }

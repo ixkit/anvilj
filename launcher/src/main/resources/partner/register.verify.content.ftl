@@ -9,7 +9,7 @@
 <br>👏欢迎 ${name} 加入 ${community!''}!<br>
 <br>请点击下面的链接完成注册流程, 开启浪漫之旅 🤝<br>
 <br>
-<a href="${endPoint}/api/v1/partner/account/sign?${signParams}" target ="_blank" title="Sign" style="color: orange; text-decoration: none;">${endPoint}/api/v1/partner/account/sign?${signParams}</a>
+<a href="${endPoint}/api/v1/partner/account/signView?${signParams}" target ="_blank" title="Sign" style="color: orange; text-decoration: none;">${endPoint}/api/v1/partner/account/sign?${signParams}</a>
  --@@ uid=xxx&token=yyy&ts=12345678
  <br>
  <br>

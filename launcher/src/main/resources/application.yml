@@ -13,6 +13,7 @@ spring:
 
 register:
   partner:
+    orgCode: A03A01 # orgCode use id now, but should be path name easier readable,eg: anvilj.web
     roles: partner # role code list with comma, eg: partner,admin
   emailSign:
     durationSeconds:  1800 # 60 * 10

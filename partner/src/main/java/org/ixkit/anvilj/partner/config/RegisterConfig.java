@@ -17,4 +17,7 @@ public class RegisterConfig {
     @Value("${register.partner.roles}")
     public String defaultPartnerRoles;
 
+    @Value("${register.partner.orgCode}")
+    public String defaultPartnerOrgCode;
+
 }

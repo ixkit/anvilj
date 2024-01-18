@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>AnvilJ ️🔨☕️🚀</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<div style="text-align: center;">
+    <span><h2> Welcome join !</h2></span><br>
+    <span class="wordWrap">{{signResult.message}}</span>
+    <br> <br> <br>
+    <span> <a  href="{{redirectLink}}">😊👏 Sign Success, Login Now!</a></span>
+</div>
+
+
+<div id="contextRef" style="display:none">{{@context}}</div>
+</body>
+<script>
+   function renderContext(){
+        try{
+            var text = document.getElementById('contextRef').innerText;
+            var result = JSON.stringify(JSON.parse(text), null, 2);
+            document.getElementById('renderRef').innerText= result ;
+        }catch(ex){
+            console.waring('some errors occurs',ex);
+        }
+   }
+  // renderContext();
+</script>
+<style>
+      .wordWrap {
+            /*这两行代码可以解决大部分场景下的换行问题*/
+            word-break: break-all;
+            word-wrap: break-word;
+            /*但在有些场景中，还需要加上下面这行代码*/
+            white-space: normal;
+      }
+</style>
+</html>

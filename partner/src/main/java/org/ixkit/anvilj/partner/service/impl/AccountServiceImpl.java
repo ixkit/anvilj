@@ -16,7 +16,9 @@ import org.jeecg.common.constant.CacheConstant;
 import org.jeecg.common.util.PasswordUtil;
 import org.jeecg.common.util.RedisUtil;
 import org.jeecg.common.util.oConvertUtils;
+import org.jeecg.modules.system.entity.SysDepart;
 import org.jeecg.modules.system.entity.SysRole;
+import org.jeecg.modules.system.service.ISysDepartService;
 import org.jeecg.modules.system.service.ISysRoleService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +41,10 @@ public class AccountServiceImpl implements IAccountService {
 
     @Autowired
     private ISysRoleService sysRoleService;
+
+    @Autowired
+    private ISysDepartService sysDepartService;
+
     /*
       user apply enroll partner --> send verify sign email --> sign ---> done
      */
@@ -138,6 +144,9 @@ public class AccountServiceImpl implements IAccountService {
         BeanUtils.copyProperties(account,partner);
 
         account.setRoleIds(getDefaultRoleIds(registerConfig.defaultPartnerRoles));
+        //@@TODO should use name path but code
+        String orgIdes = getDefaultOrgIds(registerConfig.defaultPartnerOrgCode);
+        account.setOrgIds(orgIdes);
         partner.setAccount(account);
         partnerService.create(partner);
         return partner;
@@ -176,4 +185,23 @@ public class AccountServiceImpl implements IAccountService {
         return result;
     }
 
+    private List<SysDepart> findDefaultOrg(String orgCodes){
+        LambdaQueryWrapper<SysDepart> wrapper = new LambdaQueryWrapper<>();
+        List names = Lists.of(orgCodes);
+        wrapper.in(SysDepart::getOrgCode,names);
+        List<SysDepart> result = sysDepartService.list(wrapper);
+        return result;
+    }
+
+    private String getDefaultOrgIds(String orgCodes){
+        if (Strings.isEmpty(orgCodes)) return null;
+        List<SysDepart> roles = findDefaultOrg(orgCodes);
+        if (null == roles || roles.size()<=0) return null;
+        String result = roles.stream()
+                .map((x)->{
+                    return x.getId();
+                })
+                .collect(Collectors.joining(","));
+        return result;
+    }
 }

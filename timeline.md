@@ -6,3 +6,4 @@
 ### 2024-1-14, website module, 
    - add website module support web portal features  
     use mustache template engine render html pages
+### 2024-1-17, email register workflow smoothly, 

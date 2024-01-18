@@ -24,7 +24,7 @@ import org.apache.shiro.authz.annotation.RequiresPermissions;
 
  /**
  * @Description: 基础资源 成员表
- * @Author: jeecg-boot
+ * @Author: ixkit
  * @Date:   2024-01-02
  * @Version: V1.0
  */

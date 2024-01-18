@@ -29,6 +29,7 @@ public class EmailRegisterService implements IEnrollStepService {
         String target = account.getEmail();
         SignData signData = new SignData();
         signData.setUid(account.getName());
+        signData.setRedirectLink((String)account.get("redirectLink"));
         generateSignToken(signData);
         String signParams = map2RequestParams(SignData.toArgs(signData));
 
