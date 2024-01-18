@@ -50,7 +50,7 @@ public class LauncherApplication extends SpringBootServletInitializer {
         String port = env.getProperty("server.port");
         String path = oConvertUtils.getString(env.getProperty("server.servlet.context-path"));
         String buf = "\n----------------------------------------------------------\n\t" +
-                "Application AnvilJ is running! Access URLs:\n\t" +
+                "Application AnvilJ 🔨☕️🚀 is running! Access URLs:\n\t" +
                 "Local: \t\thttp://localhost:" + port + path + "/\n\t" +
                 "External: \thttp://" + ip + ":" + port + path + "/\n\t" +
                 "Swagger文档: \thttp://" + ip + ":" + port + path + "/doc.html\n" +

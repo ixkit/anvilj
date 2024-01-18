@@ -15,3 +15,6 @@ env/
 ../logs
 **/.DS_Store
 .DS_Store
+
+## ignore the frontend code
+dist/

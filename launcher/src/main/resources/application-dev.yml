@@ -93,7 +93,7 @@ spring:
     pathmatch:
       matching-strategy: ant_path_matcher
   resource:
-    static-locations: classpath:/static/,classpath:/public/
+    static-locations: ${frontend.locations},classpath:/static/,classpath:/public/
     #static-locations: file:./static/,file:./dist/
   autoconfigure:
     exclude: com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure

@@ -6,7 +6,7 @@ ${AnsiColor.BRIGHT_BLUE}
 \____|__  /\____|__  / \___/   |___||_______ \\________|
         \/         \/                       \/
 
-
+🔨☕️🚀
 ${AnsiColor.BRIGHT_GREEN}
 AnvilJ Version: 1.0.0
 Jeecg  Boot Version: 3.6.2

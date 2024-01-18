@@ -2,7 +2,7 @@ spring:
   application:
     name: anvilj
   profiles:
-    active: dev #'@profile.name@'
+    active: prod #'@profile.name@'
   mustache:
     enabled: true
     prefix: classpath:/public/
@@ -10,6 +10,13 @@ spring:
     suffix: .html
   servlet:
       expose-request-attributes: true
+
+logging:
+  config: classpath:logback-${spring.profiles.active}.xml
+
+frontend:
+  locations: file:./dist/ # TODO
+  #context-root: /anvilj/**
 
 register:
   partner:
