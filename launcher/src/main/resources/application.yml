@@ -2,7 +2,7 @@ spring:
   application:
     name: anvilj
   profiles:
-    active: prod #'@profile.name@'
+    active: dev #'@profile.name@'
   mustache:
     enabled: true
     prefix: classpath:/public/
