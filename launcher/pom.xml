@@ -23,7 +23,17 @@
 <!--            <groupId>org.ixkit.vertxbot</groupId>-->
 <!--            <artifactId>vertxbot-core</artifactId>-->
 <!--        </dependency>-->
-
+        <!-- embed redis for demo mode -->
+        <dependency>
+            <groupId>com.github.microwww</groupId>
+            <artifactId>redis-server</artifactId>
+            <version>0.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.microwww</groupId>
+            <artifactId>mocker-redis-spring-boot-starter</artifactId>
+            <version>5.3.1</version>
+        </dependency>
         <!-- apps - partner -->
         <dependency>
             <groupId>org.ixkit.anvilj</groupId>
