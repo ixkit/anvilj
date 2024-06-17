@@ -23,6 +23,13 @@
 <!--            <groupId>org.ixkit.vertxbot</groupId>-->
 <!--            <artifactId>vertxbot-core</artifactId>-->
 <!--        </dependency>-->
+        <!-- ui-vue -->
+        <dependency>
+            <groupId>org.ixkit.anvilj</groupId>
+            <artifactId>ixkit-anvilj-ui-vue</artifactId>
+            <version>${ixkit-anvilj.version}</version>
+            <scope>compile</scope>
+        </dependency>
         <!-- embed redis for demo mode -->
         <dependency>
             <groupId>com.github.microwww</groupId>
