@@ -7,3 +7,6 @@
    - add website module support web portal features  
     use mustache template engine render html pages
 ### 2024-1-17, email register workflow smoothly, 
+### 2024-6-17, bundle front vue project
+    - bundle frontend vue project
+    - embed redis server (java version) for easy deploy 
