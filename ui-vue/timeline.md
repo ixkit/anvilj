@@ -27,3 +27,5 @@ the Route name should be unique or else occurs unexpected problem.
 
     Web vistior ---> WebSite entry: http://localhost:3100/  
     Admisitor/Employee ---> AdminConsole: http://localhost:3100/admin/login
+
+### bundle into main project

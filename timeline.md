@@ -10,3 +10,4 @@
 ### 2024-6-17, bundle frontend vue project
     - bundle frontend vue project
     - embed redis server (java version) for easy deploy 
+    - 
